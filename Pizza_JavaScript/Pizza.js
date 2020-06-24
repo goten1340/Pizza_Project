@@ -8,7 +8,7 @@ function getReceipt() {
     for (var i=0;i<sizeArray.length;i++) {
         if (sizeArray[i].checked) {
             var selectedSize = sizeArray[i].value;
-            text1=text+selectedSize+"<br>";
+            text1=selectedSize+"<br>";
         }
     }
     if (selectedSize==="Personal Pizza") {
@@ -36,18 +36,19 @@ function getTopping (runningTotal, text1) {
     var toppingTotal=0;
     var selectedTopping=[];
     var toppingArray=document.getElementsByClassName("toppings");
-    for (var j=0;j<toppingArray.length; j++){
-        if(toppingArray[j].checked) {
+    for (var j =0;j< toppingArray.length;j++){
+        if (toppingArray[j].checked) {
             selectedTopping.push(toppingArray[j].value);
-            console.log("selected topping item:("+toppingArray[j].value+")");
-            text1=text1+toppingArray[j].value+"<br>";
+            console.log("selected topping item: ("+toppingArray[j].value+")");
+            text1 = text1 + toppingArray[j].value+"<br>";
+
+            
         }
     }
-}
-
-    var toppingCount = selectedTopping.length;
+    var toppingCount=selectedTopping.length;
     if (toppingCount>1) {
         toppingTotal=(toppingCount-1);
+        
     }
     else {
         toppingTotal=0;
@@ -56,7 +57,27 @@ function getTopping (runningTotal, text1) {
     console.log("total selected topping items:"+toppingCount);
     console.log(toppingCount+" toppings - 1 free topping=$"+toppingTotal+".00");
     console.log("topping text1:"+text1);
-    console.log_("Purchase Total: $"+ runningTotal+".00");
+    console.log("Purchase Total: $"+ runningTotal+".00");
     document.getElementById("showText").innerHTML=text1;
     document.getElementById("totalPrice").innerHTML = "<h3>Total:<strong>$" +
         runningTotal+".00" + "</strong> </h3>";
+    var toppingTotal=0;
+    var selectedTopping=[];
+    var toppingArray=document.getElementsByClassName("toppings");
+    for (var j=0;j<toppingArray.length; j++){
+        if(toppingArray[j].checked) {
+            selectedTopping.push(toppingArray[j].value);
+            console.log("selected topping item:("+toppingArray[j].value+")");
+            text1=text1+toppingArray[j].value+"<br>";
+        }
+    }
+
+
+    var toppingCount = selectedTopping.length;
+    if (toppingCount>1) {
+        toppingTotal=(toppingCount-1);
+    }
+    else {
+        toppingTotal=0;
+    }
+}    
