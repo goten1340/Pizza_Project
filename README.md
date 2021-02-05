@@ -1,1 +1,1 @@
-# Pizza_Project: A simple website that determines the cost of the pizza and use CSS to style it create some padding and to change the colors.
+# Pizza_Project: A simple website that determines the cost of the pizza and use CSS to style it create some padding and to change the colors. Using for and if statements to calculate the price, the number of toppings and then display that price
